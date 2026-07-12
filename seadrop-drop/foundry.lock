@@ -1,0 +1,8 @@
+{
+  "../lib/ERC721A": {
+    "rev": "6f8a82a7b2833ad8b2fc7b54349281143a731fdd"
+  },
+  "../lib/openzeppelin-contracts": {
+    "rev": "5fd1781b1454fd1ef8e722282f86f9293cacf256"
+  }
+}
