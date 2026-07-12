@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoodlings — 4663 fully on-chain spirits of Robinhood Chain</title>
+<meta name="description" content="4663 fully on-chain hooded spirits of Robinhood Chain — one for every unit of chain id 4663. No IPFS, no servers. Mint for 0.0005 ETH.">
+<style>
+  :root { --gold:#f5c542; --bg:#0b0e17; --card:#131829; --ink:#e2e8f0; --mut:#94a3b8; --acc:#10b981; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:radial-gradient(1200px 600px at 50% -100px,#1c2447 0%,var(--bg) 60%); color:var(--ink);
+         font-family:system-ui,-apple-system,sans-serif; min-height:100vh; }
+  .wrap { max-width:960px; margin:0 auto; padding:40px 20px 80px; }
+  header { text-align:center; margin-bottom:36px; }
+  h1 { font-size:56px; margin:0; font-weight:900; letter-spacing:-2px;
+       background:linear-gradient(90deg,#f5c542,#10b981,#38bdf8); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .tag { color:var(--mut); font-size:18px; margin-top:8px; }
+  .tag b { color:var(--gold); }
+  .chainfact { display:inline-block; margin-top:14px; background:#131829; border:1px solid #263050; border-radius:99px;
+               padding:8px 18px; font-size:14px; color:var(--mut); }
+  .chainfact b { color:var(--ink); }
+  .strip { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr)); gap:10px; margin:28px 0; }
+  .strip img { width:100%; border-radius:10px; }
+  .panel { background:var(--card); border:1px solid #263050; border-radius:16px; padding:28px; max-width:460px; margin:0 auto; }
+  .row { display:flex; justify-content:space-between; margin:10px 0; font-size:15px; color:var(--mut); }
+  .row b { color:var(--ink); }
+  .bar { height:8px; background:#0b0e17; border-radius:99px; overflow:hidden; margin:14px 0 22px; }
+  .bar i { display:block; height:100%; background:linear-gradient(90deg,var(--acc),var(--gold)); width:3.5%; transition:width .6s; }
+  .qty { display:flex; align-items:center; gap:14px; justify-content:center; margin:18px 0; }
+  .qty button { width:44px; height:44px; border-radius:10px; border:1px solid #263050; background:#0b0e17; color:var(--ink);
+                font-size:22px; cursor:pointer; }
+  .qty span { font-size:28px; font-weight:800; min-width:40px; text-align:center; }
+  .cta { width:100%; padding:16px; border:none; border-radius:12px; font-size:18px; font-weight:800; cursor:pointer;
+         background:linear-gradient(90deg,#10b981,#0ea5e9); color:#04121f; }
+  .cta:disabled { opacity:.55; cursor:default; }
+  .note { text-align:center; color:var(--mut); font-size:13px; margin-top:12px; min-height:18px; }
+  .links { text-align:center; margin-top:26px; font-size:14px; }
+  .links a { color:#38bdf8; text-decoration:none; margin:0 10px; }
+  .founder-note { text-align:center; color:var(--mut); font-size:14px; margin-top:30px; }
+  .founder-note b { color:var(--gold); }
+  footer { text-align:center; color:#475569; font-size:13px; margin-top:50px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>HOODLINGS</h1>
+    <div class="tag"><b>4663</b> fully on-chain hooded spirits of Robinhood Chain</div>
+    <div class="chainfact">Supply = chain id = <b>4663</b> · art &amp; metadata live <b>100% inside the contract</b> — no IPFS, no servers, forever</div>
+  </header>
+
+  <div class="strip">
+    <img src="art/hoodling-1.svg" alt="Hoodling #1"><img src="art/hoodling-42.svg" alt="Hoodling #42">
+    <img src="art/hoodling-163.svg" alt="Hoodling #163"><img src="art/hoodling-777.svg" alt="Hoodling #777">
+    <img src="art/hoodling-1337.svg" alt="Hoodling #1337"><img src="art/hoodling-2048.svg" alt="Hoodling #2048">
+    <img src="art/hoodling-3333.svg" alt="Hoodling #3333"><img src="art/hoodling-4663.svg" alt="Hoodling #4663">
+  </div>
+
+  <div class="panel">
+    <div class="row"><span>Minted</span><b id="supply">— / 4663</b></div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="row"><span>Price</span><b>0.0005 ETH each</b></div>
+    <div class="row"><span>Per transaction</span><b>max 10</b></div>
+    <div class="qty">
+      <button id="minus">−</button><span id="qty">1</span><button id="plus">+</button>
+    </div>
+    <div class="row"><span>Total</span><b id="total">0.0005 ETH</b></div>
+    <button class="cta" id="mint">Connect Wallet</button>
+    <div class="note" id="note"></div>
+  </div>
+
+  <div class="founder-note">The first <b>163 Founder Hoodlings</b> wear gold-trimmed hoods and carry the <b>Founder</b> trait on-chain.</div>
+
+  <div class="links">
+    <a id="oslink" href="https://opensea.io/assets/robinhood/0x2ac39f76ddb6cfb48bb9d39bad95b55396c52334" target="_blank" rel="noopener">OpenSea</a>
+    <a href="https://robinhoodchain.blockscout.com/address/0x2ac39f76ddb6cfb48bb9d39bad95b55396c52334" target="_blank" rel="noopener">Contract on Blockscout</a>
+  </div>
+
+  <footer>Hoodlings · Robinhood Chain mainnet (4663) · 0x2ac3…2334 · art generated by the contract itself</footer>
+</div>
+
+<script>
+const CONTRACT = "0x2ac39f76ddb6cfb48bb9d39bad95b55396c52334";
+const RPC = "https://rpc.mainnet.chain.robinhood.com";
+const CHAIN_HEX = "0x1237"; // 4663
+const PRICE_WEI = 500000000000000n; // 0.0005 ETH
+const SEL_MINT = "0xa0712d68", SEL_SUPPLY = "0x18160ddd";
+
+let qty = 1, connected = null;
+const $ = id => document.getElementById(id);
+
+function fmtEth(wei) { return (Number(wei) / 1e18).toString().replace(/(\.\d{4}).*/, "$1"); }
+function renderQty() { $("qty").textContent = qty; $("total").textContent = fmtEth(PRICE_WEI * BigInt(qty)) + " ETH"; }
+$("minus").onclick = () => { qty = Math.max(1, qty - 1); renderQty(); };
+$("plus").onclick  = () => { qty = Math.min(10, qty + 1); renderQty(); };
+
+async function rpcCall(to, data) {
+  const res = await fetch(RPC, { method:"POST", headers:{ "content-type":"application/json" },
+    body: JSON.stringify({ jsonrpc:"2.0", id:1, method:"eth_call", params:[{ to, data }, "latest"] }) });
+  return (await res.json()).result;
+}
+
+async function refreshSupply() {
+  try {
+    const hex = await rpcCall(CONTRACT, SEL_SUPPLY);
+    const n = parseInt(hex, 16);
+    $("supply").textContent = n + " / 4663";
+    $("bar").style.width = Math.max(2, n / 4663 * 100) + "%";
+  } catch (e) { /* keep placeholder */ }
+}
+refreshSupply(); setInterval(refreshSupply, 15000);
+
+async function ensureChain() {
+  try {
+    await ethereum.request({ method:"wallet_switchEthereumChain", params:[{ chainId: CHAIN_HEX }] });
+  } catch (err) {
+    if (err.code === 4902) {
+      await ethereum.request({ method:"wallet_addEthereumChain", params:[{
+        chainId: CHAIN_HEX, chainName: "Robinhood Chain",
+        nativeCurrency: { name:"Ether", symbol:"ETH", decimals:18 },
+        rpcUrls: [RPC], blockExplorerUrls: ["https://robinhoodchain.blockscout.com"]
+      }]});
+    } else throw err;
+  }
+}
+
+$("mint").onclick = async () => {
+  const btn = $("mint"), note = $("note");
+  if (typeof window.ethereum === "undefined") { note.textContent = "No wallet found — install MetaMask."; return; }
+  try {
+    if (!connected) {
+      const [acct] = await ethereum.request({ method:"eth_requestAccounts" });
+      await ensureChain();
+      connected = acct;
+      btn.textContent = "Mint " + qty;
+      note.textContent = "Connected: " + acct.slice(0,6) + "…" + acct.slice(-4);
+      const upd = () => { btn.textContent = "Mint " + qty; };
+      $("plus").addEventListener("click", upd); $("minus").addEventListener("click", upd);
+      return;
+    }
+    await ensureChain();
+    btn.disabled = true; note.textContent = "Confirm in wallet…";
+    const data = SEL_MINT + BigInt(qty).toString(16).padStart(64, "0");
+    const value = "0x" + (PRICE_WEI * BigInt(qty)).toString(16);
+    const tx = await ethereum.request({ method:"eth_sendTransaction",
+      params:[{ from: connected, to: CONTRACT, data, value }] });
+    note.innerHTML = 'Mint sent! <a href="https://robinhoodchain.blockscout.com/tx/' + tx + '" target="_blank" rel="noopener" style="color:#38bdf8">View transaction</a>';
+    setTimeout(refreshSupply, 6000); setTimeout(refreshSupply, 15000);
+  } catch (e) {
+    $("note").textContent = e && e.message ? e.message.slice(0, 90) : "Transaction cancelled.";
+  } finally { btn.disabled = false; }
+};
+</script>
+</body>
+</html>
