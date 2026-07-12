@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Hoodlings — Sanat Önizleme</title>
+<style>
+  body { background:#0b0e17; color:#e2e8f0; font-family:system-ui,sans-serif; margin:0; padding:24px; }
+  h1 { font-weight:800; margin:0 0 4px; }
+  p  { color:#94a3b8; margin:0 0 20px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:16px; }
+  .card { background:#131829; border-radius:12px; padding:10px; text-align:center; }
+  .card img { width:100%; border-radius:8px; display:block; }
+  .card .label { margin-top:8px; font-size:13px; color:#cbd5e1; }
+  .founder { outline:2px solid #f5c542; }
+  .founder .label::after { content:" · FOUNDER"; color:#f5c542; font-weight:700; }
+</style>
+</head>
+<body>
+<h1>Hoodlings</h1>
+<p>4663 tamamen zincir üstü Hoodling — Robinhood Chain (chainId 4663). Örnekler kontratın ürettiği gerçek SVG'lerdir.</p>
+<div class="grid" id="grid"></div>
+<script>
+  const ids = [1,7,42,99,163,164,300,500,777,1000,1337,1777,2048,2500,2900,3141,3333,3700,4000,4200,4444,4551,4662,4663];
+  const grid = document.getElementById('grid');
+  for (const id of ids) {
+    const card = document.createElement('div');
+    card.className = 'card' + (id <= 163 ? ' founder' : '');
+    card.innerHTML = `<img src="hoodling-${id}.svg" alt="Hoodling #${id}"><div class="label">Hoodling #${id}</div>`;
+    grid.appendChild(card);
+  }
+</script>
+</body>
+</html>
