@@ -31,7 +31,7 @@ Robinhood Chain's chain id is **4663** — so that's the supply. The first **163
 
 ## Repo layout
 
-This repo (`hoodlings-contracts`, private) holds the contract source, tests, and deploy scripts. The public mint page is deployed from the separate [`hoodlings`](https://github.com/izzetcakmak/hoodlings) repo; to update it, edit `docs/` here, copy to `../hoodlings-site`, and push there.
+This repo (`hoodlings-contracts`) holds the contract source, tests, and deploy scripts. The mint page is served from https://www.barbariansbtcwars.xyz/hoodlings/ (the `hoodlings/` folder of the barbarians-btc-wars repo); to update it, edit `docs/` here and copy the files there.
 
 ## Develop
 
