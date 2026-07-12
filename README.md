@@ -29,6 +29,10 @@ Robinhood Chain's chain id is **4663** — so that's the supply. The first **163
 - `tokenURI` returns a `data:application/json;base64` URI with the SVG embedded — fully self-contained
 - `contractURI()` provides OpenSea collection metadata
 
+## Repo layout
+
+This repo (`hoodlings-contracts`, private) holds the contract source, tests, and deploy scripts. The public mint page is deployed from the separate [`hoodlings`](https://github.com/izzetcakmak/hoodlings) repo; to update it, edit `docs/` here, copy to `../hoodlings-site`, and push there.
+
 ## Develop
 
 ```bash
