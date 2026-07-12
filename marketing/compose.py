@@ -64,28 +64,27 @@ def banner() -> str:
     for i, (sx, sy, sr) in enumerate([(180, 90, 3), (520, 60, 2), (860, 130, 2.5), (1180, 50, 2),
                                       (2600, 80, 3), (2380, 40, 2), (1560, 45, 2), (2720, 300, 2)]):
         p.append(f"<circle cx='{sx}' cy='{sy}' r='{sr}' fill='#fff' opacity='.5'/>")
-    # left text block (kept in the upper half — OpenSea overlays the pfp on
-    # the lower-left of collection banners)
-    p.append(f"<text x='120' y='260' font-family='{FONT}' font-size='150' font-weight='900' "
-             f"letter-spacing='-4' fill='url(#tg)'>HOODLINGS</text>")
-    p.append(f"<text x='126' y='338' font-family='{FONT}' font-size='42' fill='#94a3b8'>"
-             f"4663 fully on-chain spirits of Robinhood Chain</text>")
-    # badge
-    p.append("<rect x='126' y='390' width='830' height='74' rx='37' fill='#131829' "
+    # OpenSea crops banner edges responsively — all critical content lives in
+    # the center safe zone; cards flank the edges where cropping is harmless.
+    p.append(f"<text x='1400' y='300' text-anchor='middle' font-family='{FONT}' font-size='150' "
+             f"font-weight='900' letter-spacing='-4' fill='url(#tg)'>HOODLINGS</text>")
+    p.append(f"<text x='1400' y='382' text-anchor='middle' font-family='{FONT}' font-size='42' "
+             f"fill='#94a3b8'>4663 fully on-chain spirits of Robinhood Chain</text>")
+    # badge (centered)
+    p.append("<rect x='975' y='432' width='850' height='74' rx='37' fill='#131829' "
              "stroke='#263050' stroke-width='2'/>")
-    p.append(f"<text x='166' y='439' font-family='{FONT}' font-size='34' fill='#e2e8f0'>"
-             f"Supply = Chain ID = <tspan fill='#f5c542' font-weight='700'>4663</tspan>"
+    p.append(f"<text x='1400' y='481' text-anchor='middle' font-family='{FONT}' font-size='34' "
+             f"fill='#e2e8f0'>Supply = Chain ID = <tspan fill='#f5c542' font-weight='700'>4663</tspan>"
              f" &#183; mint <tspan fill='#10b981' font-weight='700'>0.0005 ETH</tspan>"
              f" &#183; no IPFS</text>")
-    # figure lineup, star of the show (#52 laser+aura founder) center-large
+    # cards flank both edges; hero (#52 laser+aura founder) innermost right
     lineup = [
-        (1250, 96, 240, -3, 2900, False),
-        (1448, 70, 258, 2, 4444, False),
-        (1660, 55, 285, -2, 89, True),
-        (1905, 30, 330, 0, 52, True),      # hero
-        (2200, 55, 285, 2, 42, True),
-        (2400, 75, 258, -2, 1000, False),
-        (2582, 100, 218, 3, 99, True),
+        (40, 96, 240, -3, 2900, False),
+        (275, 65, 272, 2, 4444, False),
+        (535, 40, 300, -2, 89, True),
+        (1965, 40, 300, 2, 52, True),      # hero
+        (2255, 65, 272, -2, 42, True),
+        (2510, 96, 240, 3, 1000, False),
     ]
     for x, y, size, rot, tid, founder in lineup:
         p.append(card(tid, x, y + (700 - size) / 2 - 40, size, rot, founder))
