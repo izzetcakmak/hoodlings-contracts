@@ -4,7 +4,7 @@
 
 No IPFS. No servers. Every Hoodling's art and metadata are generated and stored entirely inside the contract, forever.
 
-- **Mint:** https://izzetcakmak.github.io/hoodlings/ — 0.0005 ETH, max 10 per tx
+- **Mint:** https://www.barbariansbtcwars.xyz/hoodlings/ — 0.0005 ETH, max 10 per tx
 - **Contract:** [`0x2ac39f76ddb6cfb48bb9d39bad95b55396c52334`](https://robinhoodchain.blockscout.com/address/0x2ac39f76ddb6cfb48bb9d39bad95b55396c52334) (Robinhood Chain mainnet, chain id 4663)
 - **OpenSea:** https://opensea.io/assets/robinhood/0x2ac39f76ddb6cfb48bb9d39bad95b55396c52334
 
