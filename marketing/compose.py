@@ -134,6 +134,33 @@ def featured() -> str:
     return "".join(p)
 
 
+def x_card() -> str:
+    """1600x900 image for X posts (16:9 shows uncropped in the timeline)."""
+    W, H = 1600, 900
+    p = [
+        f"<svg xmlns='http://www.w3.org/2000/svg' width='{W}' height='{H}' viewBox='0 0 {W} {H}'>",
+        f"<defs>{TITLE_GRAD}{BG_GRAD}</defs>",
+        f"<rect width='{W}' height='{H}' fill='url(#bgg)'/>",
+    ]
+    for sx, sy, sr in [(140, 100, 2.5), (1480, 70, 3), (800, 40, 2), (1300, 820, 2),
+                       (220, 800, 2.5), (1050, 120, 2)]:
+        p.append(f"<circle cx='{sx}' cy='{sy}' r='{sr}' fill='#fff' opacity='.5'/>")
+    p.append(f"<text x='800' y='170' text-anchor='middle' font-family='{FONT}' font-size='120' "
+             f"font-weight='900' letter-spacing='-3' fill='url(#tg)'>HOODLINGS</text>")
+    p.append(f"<text x='800' y='240' text-anchor='middle' font-family='{FONT}' font-size='40' "
+             f"fill='#94a3b8'>4663 fully on-chain spirits of Robinhood Chain</text>")
+    trio = [(200, 300, 290, -4, 89, True), (645, 265, 320, 0, 52, True), (1110, 300, 290, 4, 42, True)]
+    for x, y, size, rot, tid, founder in trio:
+        p.append(card(tid, x, y, size, rot, founder))
+    p.append("<rect x='390' y='680' width='820' height='76' rx='38' fill='#131829' "
+             "stroke='#263050' stroke-width='2'/>")
+    p.append(f"<text x='800' y='730' text-anchor='middle' font-family='{FONT}' font-size='34' "
+             f"fill='#e2e8f0'>mint <tspan fill='#10b981' font-weight='700'>0.0005 ETH</tspan>"
+             f" &#183; <tspan fill='#f5c542'>barbariansbtcwars.xyz/hoodlings</tspan></text>")
+    p.append("</svg>")
+    return "".join(p)
+
+
 def rasterize(name: str, svg: str, w: int, h: int) -> None:
     html = OUT / f"{name}.html"
     html.write_text(f"<!doctype html><html><head><style>*{{margin:0;padding:0}}"
@@ -156,3 +183,4 @@ if __name__ == "__main__":
     rasterize("banner", banner(), 2800, 700)
     rasterize("logo", logo(), 1000, 1000)
     rasterize("featured", featured(), 1200, 800)
+    rasterize("x-card", x_card(), 1600, 900)
